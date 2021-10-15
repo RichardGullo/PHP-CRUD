@@ -20,14 +20,25 @@ else{
     while($row = mysqli_fetch_assoc($result)){
 
             if($i++ != (mysqli_num_rows($result)-1))
-                $string = $string."{".'"name":'."\"".$row["name"]."\"}".",";
+                $string = $string."{".
+                                    '"name":'."\"".$row["name"]."\"".",".
+                                    '"id":'.$row["id"].
+                                    "}".",";
             else
-                $string = $string."{".'"name":'."\"".$row["name"]."\"}";
+                $string = $string."{".
+                                    '"name":'."\"".$row["name"]."\"".",".
+                                    '"id":'.$row["id"].
+                                    "}";
     }
 
     echo "[".$string."]";
 
 }
+
+    echo `[
+            {"name":"dusty", id:}
+        
+        ]`;
 
     
 

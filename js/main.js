@@ -1,5 +1,6 @@
 let users;
 let table = document.getElementById("table-body");
+let addButton = document.getElementById("add-button");
 
 fetch('populate.php')
 .then(function(res){
