@@ -42,6 +42,11 @@ body{
     overflow-x: hidden;
 }
 
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #e5f4fa;
+    
+}
+
 .table-scroll::-webkit-scrollbar{
     display: none;
 }
