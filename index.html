@@ -15,28 +15,15 @@
     <div class="main-container">
         <form>
             <div class="input-group input-group-lg">
-                <input type="text" class="form-control input-lg mr-1"/>
-                <button class="btn btn-primary">Add Item</button>
+                <input id="add-inputField" type="text" class="form-control input-lg mr-1"/>
+                <button id="add-button" class="btn btn-primary">Add Item</button>
             </div>
         </form>
         
         <div class="table-scroll">
             <table id="main-table" class="table table-hover">
-                <tbody id="testcase-table">
-                    <tr>
-                        <td>Entry 1</td>
-                        <td class="crud-buttons">
-                            <i class="fas fa-edit fa-lg" data-action="edit"></i>
-                            <i class="fas fa-trash fa-lg" data-action="delete"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Entry 2</td>
-                        <td class="crud-buttons">
-                            <i class="fas fa-edit fa-lg" data-action="edit"></i>
-                            <i class="fas fa-trash fa-lg" data-action="delete"></i>
-                        </td>
-                    </tr>
+                <tbody id="table-body">
+     
                 </tbody>
             </table>
         </div>
@@ -45,7 +32,7 @@
     
 <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/homework.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
 
