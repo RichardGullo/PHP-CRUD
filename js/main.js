@@ -1,4 +1,4 @@
-let users;
+let todos;
 let table = document.getElementById("table-body");
 let addButton = document.getElementById("add-button");
 let addTextField = document.getElementById("add-inputField");
@@ -15,13 +15,13 @@ function populateArray(){
     .then(function(data){
         console.log(data);
     
-        users = data;
+        todos = data;
         let output = ``;
-        for(let user of users)
+        for(let todo of todos)
         {
             output += `
             <tr>
-                <td>${user.todo}</td>
+                <td>${todo.todo}</td>
                 <td class="crud-buttons">
                     <i class="fas fa-edit fa-lg" data-action="edit"></i>
                     <i class="fas fa-trash fa-lg" data-action="delete"></i>
@@ -56,18 +56,18 @@ function handleClick(evt){
 }
 
 function editButton(index){
-    currentId = users[index].id
+    currentId = todos[index].id
     currentIndex = index;
     let nameField = document.getElementById("modal-nameField");
-    nameField.value = users[index].todo;
+    nameField.value = todos[index].todo;
     $('#myModal').modal('show');
 
 
 }
 
 function deleteEntry(index, currentRow){
-    let id = users[index].id;
-    users = users.filter((user) => user.id != id);
+    let id = todos[index].id;
+    todos = todos.filter((todo) => todo.id != id);
     let formData = new FormData();
     formData.append('delete-id', id);
     
@@ -126,7 +126,7 @@ addButton.addEventListener("click",(e)=>{
         return res.json();
     }).then(function(data){
         console.log(data);
-        users.push({name:data.name, id:data.id});
+        todos.push({todo:data.todo, id:data.id});
         let output = `
                         <td>${data.todo}</td>
                         <td class="crud-buttons">
@@ -137,6 +137,8 @@ addButton.addEventListener("click",(e)=>{
         let tr = document.createElement("tr");
         tr.innerHTML = output;
         table.appendChild(tr);
+        let inputField = document.getElementById("add-inputField");
+        inputField.value = "";
 
     })
 })
