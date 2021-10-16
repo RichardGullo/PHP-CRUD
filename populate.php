@@ -35,12 +35,6 @@ else{
 
 }
 
-    echo `[
-            {"name":"dusty", id:}
-        
-        ]`;
-
-    
 
 
 ?>

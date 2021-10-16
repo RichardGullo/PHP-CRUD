@@ -3,7 +3,7 @@
 $connection = mysqli_connect('localhost','root','','practiceDB');
 
 if($connection){
-    echo "We are connected to the database";
+    // echo "We are connected to the database";
 }
 else{
     echo("Database connection failed");
@@ -20,8 +20,25 @@ $result = mysqli_query($connection,$query);
 if(!$result){
     die('Query failed');
 }
-else
-    echo "<br/> Data inserted into table. <br/>";
+else{
+
+    $query = "SELECT * FROM cats ORDER BY ID DESC LIMIT 1";
+
+    $result = mysqli_query($connection,$query);
+
+    if(!$result){
+        die('Query failed');
+    }
+    else{
+
+        $result = mysqli_fetch_assoc($result);
+        echo "{".
+            '"name":'."\"".$result["name"]."\"".",".
+            '"id":'.$result["id"].
+            "}";
+    }
+}
+
 
 
 ?>
