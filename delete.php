@@ -9,11 +9,9 @@ else{
     echo("Database connection failed");
 }
 
-$textField = $_POST['test'];
+$id = $_POST['delete-id'];
 
-$query = "INSERT INTO cats(name,age)
-        VALUES(".'"'.$textField.'"'.",7)";
-
+$query = "DELETE FROM cats WHERE"." id=".$id;
 
 $result = mysqli_query($connection,$query);
 
@@ -21,7 +19,10 @@ if(!$result){
     die('Query failed');
 }
 else
-    echo "<br/> Data inserted into table. <br/>";
+    echo "<br/> Table Data Deleted <br/>";
 
 
 ?>
+
+
+
