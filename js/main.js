@@ -21,7 +21,7 @@ function populateArray(){
         {
             output += `
             <tr>
-                <td>${user.name}</td>
+                <td>${user.todo}</td>
                 <td class="crud-buttons">
                     <i class="fas fa-edit fa-lg" data-action="edit"></i>
                     <i class="fas fa-trash fa-lg" data-action="delete"></i>
@@ -59,7 +59,7 @@ function editButton(index){
     currentId = users[index].id
     currentIndex = index;
     let nameField = document.getElementById("modal-nameField");
-    nameField.value = users[index].name;
+    nameField.value = users[index].todo;
     $('#myModal').modal('show');
 
 
@@ -128,7 +128,7 @@ addButton.addEventListener("click",(e)=>{
         console.log(data);
         users.push({name:data.name, id:data.id});
         let output = `
-                        <td>${data.name}</td>
+                        <td>${data.todo}</td>
                         <td class="crud-buttons">
                             <i class="fas fa-edit fa-lg" data-action="edit"></i>
                             <i class="fas fa-trash fa-lg" data-action="delete"></i>

@@ -6,7 +6,7 @@ if(!$connection){
     die("Database connection failed");
 }
 
-$query = "SELECT * FROM cats";
+$query = "SELECT * FROM todos";
 
 $result = mysqli_query($connection,$query);
 
@@ -21,12 +21,12 @@ else{
 
             if($i++ != (mysqli_num_rows($result)-1))
                 $string = $string."{".
-                                    '"name":'."\"".$row["name"]."\"".",".
+                                    '"todo":'."\"".$row["todo"]."\"".",".
                                     '"id":'.$row["id"].
                                     "}".",";
             else
                 $string = $string."{".
-                                    '"name":'."\"".$row["name"]."\"".",".
+                                    '"todo":'."\"".$row["todo"]."\"".",".
                                     '"id":'.$row["id"].
                                     "}";
     }

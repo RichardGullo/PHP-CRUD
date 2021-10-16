@@ -11,7 +11,7 @@ else{
 
 $id = $_POST['delete-id'];
 
-$query = "DELETE FROM cats WHERE"." id=".$id;
+$query = "DELETE FROM todos WHERE"." id=".$id;
 
 $result = mysqli_query($connection,$query);
 

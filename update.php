@@ -12,7 +12,7 @@ else{
 $name = $_POST['update-name'];
 $id = $_POST['update-id'];
 
-$query = "UPDATE cats SET name = ". "'".$name."'".
+$query = "UPDATE todos SET todo = ". "'".$name."'".
          " WHERE id = ".$id;
 
 $result = mysqli_query($connection,$query);

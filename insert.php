@@ -11,8 +11,8 @@ else{
 
 $textField = $_POST['test'];
 
-$query = "INSERT INTO cats(name,age)
-        VALUES(".'"'.$textField.'"'.",7)";
+$query = "INSERT INTO todos(todo)
+        VALUES(".'"'.$textField.'"'.")";
 
 
 $result = mysqli_query($connection,$query);
@@ -22,7 +22,7 @@ if(!$result){
 }
 else{
 
-    $query = "SELECT * FROM cats ORDER BY ID DESC LIMIT 1";
+    $query = "SELECT * FROM todos ORDER BY id DESC LIMIT 1";
 
     $result = mysqli_query($connection,$query);
 
@@ -33,7 +33,7 @@ else{
 
         $result = mysqli_fetch_assoc($result);
         echo "{".
-            '"name":'."\"".$result["name"]."\"".",".
+            '"todo":'."\"".$result["todo"]."\"".",".
             '"id":'.$result["id"].
             "}";
     }
